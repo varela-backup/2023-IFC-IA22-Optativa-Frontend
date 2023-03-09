@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <title>To Do - da Maloca IA22</title>
+  <style>
+    header,
+    main {
+      margin: 0 auto;
+      width: 80vw;
+      border: 1px solid green;
+    }
+    
+    header {
+      border: 1px solid red;
+      margin-bottom: 10px;
+      display: flex;
+    }
+    
+    header>input {
+      flex-grow: 2;
+    }
+    
+    header>button {
+      flex-grow: 1;
+    }
+    
+    main>div {
+      display: flex;
+    }
+    
+    main>div>span {
+      flex-grow: 1;
+    }
+
+    .titulo {
+      text-decoration: none;
+    }
+    
+    .titulo-riscado {
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <input id="inp-add" type="text">
+    <button id="bt-add">add</button>
+  </header>
+  <main>
+    <template id="line-template">
+      <div class="container">
+        <input type="checkbox" class="inp-check">
+        <span class="titulo">título</span>
+        <button class="bt-rm">remover</button>
+      </div>
+    </template>
+  </main>
+  <script>
+    const main = document.querySelector("main")
+    const inpAdd = document.querySelector("#inp-add")
+    const btAdd = document.querySelector("#bt-add")
+    const template = document.querySelector("#line-template")
+    
+    function adicionarNovaTarefa() {
+      const clone = template.content.cloneNode(true)
+      const remover = clone.querySelector(".bt-rm")
+      const checkbox = clone.querySelector(".inp-check")
+      const titulo = clone.querySelector(".titulo")
+      titulo.innerText = inpAdd.value
+      main.append(clone)
+      inpAdd.value = ""
+      remover.addEventListener("click", removerTarefa)
+      checkbox.addEventListener("change", riscarLinha)
+    }
+    
+    function riscarLinha(event) {
+      const container = event.target.closest(".container")
+      const title = container.querySelector(".titulo")
+      
+      // event.target.checked
+      //   ? title.style.textDecoration = "line-through"
+      //   : title.style.textDecoration = ""
+
+      if (event.target.checked) {
+        title.style.textDecoration = "line-through"
+      } else {
+        title.style.textDecoration = ""
+      }
+    }
+    
+    function removerTarefa(event) {
+      const container =  event.target.closest(".container")
+      container.remove()
+    }
+    
+    btAdd.addEventListener("click", adicionarNovaTarefa)
+  </script>
+</body>
+
+</html>
