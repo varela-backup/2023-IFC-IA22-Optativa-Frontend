@@ -1,0 +1,46 @@
+header {
+  border: 1px solid black;
+}
+
+main {
+  border: 1px solid black;
+  min-height: 200px;
+  /* barra de rolagem */
+  /* overflow: auto; */ 
+}
+
+main section {
+  background-color: lightblue;
+  margin: 10px;
+}
+
+main section div {
+  background-color: lightseagreen;
+  padding: 10px;
+  min-height: 10px;
+}
+
+main section div div {
+  background-color: lightcoral;
+  border: 1px solid white;
+  min-height: 10px;
+}
+
+footer {
+  border: 1px solid black;
+}
+
+/* ---------------------------------------------------------------------------- */
+/* GRID */
+
+main section.grid > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* ---------------------------------------------------------------------------- */
+/* FLEX */
+
+main section.flex > div {
+  display: flex;
+}
