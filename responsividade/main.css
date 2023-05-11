@@ -66,29 +66,21 @@ footer {
   border: 1px solid black;
 }
 
-/* ---------------------------------------------------------------------------- */
-/* GRID */
+/* --✀------------------------------------------------------------- */
+/* GALERIA DE FOTOS */
 
-main section.grid>div {
+.galeria-fotos {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-rows: repeat(3000, 200px); /* refatorar */
 }
 
-main section.grid>div>div:last-of-type {
-  grid-column-start: 2;
-  grid-column-end: 4;
+.galeria-fotos img {
+  width: 100%;
+  transition: .3s;
+  object-fit: none;
 }
 
-/* ---------------------------------------------------------------------------- */
-/* FLEX */
-
-main section.flex>div {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-main section.flex>div>div {
-  width: 33.333%;
+.galeria-fotos:hover img:not(:hover) {
+  transform: scale(.8);
 }
