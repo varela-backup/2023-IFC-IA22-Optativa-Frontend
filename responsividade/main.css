@@ -72,15 +72,34 @@ footer {
 .galeria-fotos {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-template-rows: repeat(3000, 200px); /* refatorar */
 }
 
 .galeria-fotos img {
   width: 100%;
   transition: .3s;
-  object-fit: none;
+  object-fit: cover;
+  height: 200px;
 }
 
 .galeria-fotos:hover img:not(:hover) {
   transform: scale(.8);
+}
+
+.galeria-fotos > :nth-child(1) {
+  border: 5px solid red;
+  
+  /* grid-column-start: 1;
+  grid-column-end: 3;
+  
+  grid-row-start: 1;
+  grid-row-end: 3; */
+  
+  grid-column: span 2;
+  grid-row: span 2; 
+
+  height: 400px;
+}
+
+.galeria-fotos > :nth-child(4) {
+  grid-column: span 2;
 }
