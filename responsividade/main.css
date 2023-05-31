@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 header {
   border: 1px solid black;
   padding: 1rem;
@@ -41,8 +47,8 @@ header nav div.menu a:hover {
 main {
   border: 1px solid black;
   min-height: 200px;
-  /* barra de rolagem */
-  /* overflow: auto; */
+  padding: 1rem;
+  min-height: 100vh; /* refatora */
 }
 
 main section {
@@ -71,6 +77,7 @@ footer {
 
 .galeria-fotos {
   display: grid;
+  gap: .5rem;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
@@ -86,8 +93,6 @@ footer {
 }
 
 .galeria-fotos > :nth-child(1) {
-  border: 5px solid red;
-  
   /* grid-column-start: 1;
   grid-column-end: 3;
   
@@ -102,4 +107,36 @@ footer {
 
 .galeria-fotos > :nth-child(4) {
   grid-column: span 2;
+}
+
+/* --✀------------------------------------------------------------- */
+/* MODAL GALERIA DE FOTOS */
+
+div.modal-galeria {
+  background-color: rgba(0, 0, 0, .8);
+  position: fixed;
+  z-index: 99999;
+  /* 
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; 
+  */
+  inset: 0;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
+}
+
+div.modal-galeria.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+div.modal-galeria div.conteudo {
+  width: 80%;
+  height: 80%;
+  background-color: rgba(255, 255, 255, .1);
 }
