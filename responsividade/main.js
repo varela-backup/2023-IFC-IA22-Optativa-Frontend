@@ -1,19 +1,13 @@
-let modalGaleria = document.querySelector("div.modal-galeria")
-let imgs = document.querySelectorAll("div.galeria-fotos img")
+const modalGaleria = document.querySelector("div.modal-galeria")
+const btClose = modalGaleria.querySelector(".bt-close") 
+const imgs = document.querySelectorAll("div.galeria-fotos img")
 
-imgs.forEach(img => {
-  img.onclick = function() {
-    modalGaleria.classList.add("show")
-  }
+btClose.addEventListener("click", () => {
+  modalGaleria.classList.remove("show")
 })
 
-// for (let i=0; i < imgs.length; i++) {
-//   imgs[i].onclick = function() {
-//     modalGaleria.classList.add("show")
-//   }
-// }
-
-// let img = document.querySelector("div.galeria-fotos img")
-// img.onclick = function() {
-//   modalGaleria.classList.add("show")
-// }
+imgs.forEach(img => {
+  img.addEventListener("click", () => {
+    modalGaleria.classList.add("show")
+  })
+})
