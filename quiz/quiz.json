@@ -1,0 +1,17 @@
+[
+  {
+    "pergunta": "Quem é o professor mais odiado da IA22?",
+    "alternativas": ["Dunha", "Zika", "Zé da Manfa", "Varela", "Nirce", "Circe", "Dirce", "Wanderlay", "Shiriu"],
+    "resposta": 3
+  },
+  {
+    "pergunta": "Qual é a idade do professor varela?",
+    "alternativas": [25, 30, 32, 33, 36, 37, 38, 40, 42, 44],
+    "resposta": 4
+  },
+  {
+    "pergunta": "Quem é o aluno mais velho da IA22?",
+    "alternativas": ["Emanuella", "Carol", "Ahrtur", "Diego", "Anthoni", "Iuri", "Paulo", "Gabriel Couto", "Nicolas", "Edison"],
+    "resposta": 6
+  }
+]
